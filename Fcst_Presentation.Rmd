@@ -1,0 +1,36 @@
+---
+title: "Sales Forecast App"
+author: "Kyle Hayes"
+date: "August 21, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(fpp2)
+```
+
+## Purpose of the App
+
+This presentation introduces the "Sales Forecast App"" built as part of the Developing Data Products course on Coursera.  The app takes as an input the average amount of advertising expected to be spent over the next 6 months.  The Server reacts to this input and generates a dynamic regression forecast of Sales using Advertising Spend and ARMA errors as inputs.  The app then generates a plot of historical Sales along with the expected forecast and confidence intervals.
+
+## How to Use the App
+
+- Use the slider on the left to input an estimated expenditure on amount of advertising 
+- Examine the output below to see the estimated forecast given the anticipated advertising spending
+- Consider the range of uncertainty in the forecast given the confidence intervals plotted
+
+## Data Used
+
+The data used was the "Advert" data found in the fpp2 package.
+
+```{r data, echo = TRUE}
+summary(advert)
+```
+
+## Relationship between Spending and Advertising
+
+```{r pressure}
+autoplot(advert,facets=TRUE)
+```
+
